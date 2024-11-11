@@ -24,7 +24,7 @@ public class BasicSecurityConfiguration {
     @Bean
     SecurityFilterChain SecurityFilterChain(HttpSecurity http) throws Exception {
         var AuthFilter = new AuthenticationFilter(customAuthenticationManager,env);
-        AuthFilter.setFilterProcessesUrl("/api/route/token");
+        AuthFilter.setFilterProcessesUrl("/api/route/gettoken");
 
         return  http.csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(mgt->mgt.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
