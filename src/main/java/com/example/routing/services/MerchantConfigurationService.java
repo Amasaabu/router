@@ -20,7 +20,7 @@ public class MerchantConfigurationService {
     Utils utils;
     //Retrive Merchant Configs
     public List<MerchantConfiguration> getAlLMerchantConfigs(String merchantId) {
-        return merchantConfigRepo.findAll();
+        return merchantConfigRepo.findBymerchantId(merchantId);
     }
 
     public List<WeightEvaluationResult> routeTransaction (Transaction transaction, String merchantId){
